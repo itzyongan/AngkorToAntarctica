@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>From Angkor to Antarctica – The First Cambodian Gen Z South Pole Expedition</title>
 <meta name="description" content="Taking Cambodian youth to the bottom of the world. Support the first Cambodian Gen Z South Pole expedition.">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Sans+Khmer:wght@400;700&family=Kantumruy+Pro:wght@400;700&display=swap" rel="stylesheet">
@@ -27,10 +29,10 @@ h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:1.2rem;max-wid
 h3{font-size:1.25rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.01em}
 p{max-width:62ch}
 section{padding:5.5rem 0}
-.btn{display:inline-block;font-family:var(--display);font-weight:800;font-size:1.05rem;text-decoration:none;
-  background:var(--saffron);color:var(--night);padding:.95rem 1.7rem;border-radius:999px;border:0;cursor:pointer}
-.btn:hover{background:#ffbe2e}
-.btn.ghost{background:transparent;color:#fff;border:2px solid var(--glacier)}
+.btn{display:inline-block;text-align:center;font-family:var(--display);font-weight:800;font-size:1.05rem;line-height:1.4;text-decoration:none;
+  background:var(--saffron);color:var(--night);padding:.95rem 1.7rem;border-radius:999px;border:2px solid var(--saffron);cursor:pointer}
+.btn:hover{background:#ffbe2e;border-color:#ffbe2e}
+.btn.ghost{background:transparent;color:#fff;border-color:var(--glacier)}
 .btn.ghost:hover{background:rgba(255,255,255,.1)}
 
 /* Khmer typography */
@@ -59,11 +61,12 @@ nav ul a:hover{color:#fff}
 /* hero */
 .hero{position:relative;color:#fff;background:linear-gradient(180deg,var(--night) 0%,#1d3d5c 38%,#7b6a5a 62%,var(--saffron) 86%);
   padding:0;overflow:hidden}
-.hero .intro{padding-top:7.5rem;position:relative;z-index:2}
+.hero .intro{padding-top:7.5rem;padding-bottom:3rem;position:relative;z-index:2}
 .hero h1{font-size:clamp(3rem,9.5vw,7.6rem);font-weight:800;max-width:11ch}
 .hero .lede{font-size:1.4rem;margin:1.5rem 0 2rem;color:var(--frost);max-width:34ch}
-.hero .cta{display:flex;gap:1rem;flex-wrap:wrap}
-.scene{display:block;width:100%;height:auto;margin-top:-3rem;position:relative;z-index:1}
+.hero .cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:stretch}
+.hero .cta .btn{flex:1 1 15rem;max-width:20rem;display:flex;align-items:center;justify-content:center}
+.scene{display:block;width:100%;height:auto;margin-top:0;position:relative;z-index:1}
 .sun{animation:rise 2.6s cubic-bezier(.2,.7,.2,1) both}
 @keyframes rise{from{transform:translateY(150px);opacity:.2}to{transform:none;opacity:1}}
 
@@ -125,7 +128,7 @@ footer{background:var(--night);color:var(--frost);padding:3rem 0;font-size:.95re
 footer p{max-width:70ch;margin-bottom:.8rem}
 .nb{white-space:nowrap;word-break:keep-all}
 html[lang="km"] h1{max-width:none}
-@media (max-width:760px){nav ul{display:none}section{padding:4rem 0}}
+@media (max-width:760px){nav ul{display:none}section{padding:4rem 0}.hero .cta .btn{max-width:none}}
 @media (prefers-reduced-motion:reduce){.sun{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
