@@ -7,7 +7,7 @@
 <meta name="description" content="Taking Cambodian youth to the bottom of the world. Support the first Cambodian Gen Z South Pole expedition.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Sans+Khmer:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Sans+Khmer:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --night:#0b1f33; --deep:#12304b; --ice:#eaf3f6; --glacier:#9cc1d1; --frost:#cfe3ea;
@@ -32,20 +32,30 @@ section{padding:5.5rem 0}
 .btn.ghost{background:transparent;color:#fff;border:2px solid var(--glacier)}
 .btn.ghost:hover{background:rgba(255,255,255,.1)}
 
+/* Khmer typography */
+html[lang="km"] body{line-height:1.95}
+html[lang="km"] h1,html[lang="km"] h2,html[lang="km"] h3{letter-spacing:0;line-height:1.4;font-weight:700}
+html[lang="km"] h1{font-size:clamp(2.6rem,8vw,6rem);max-width:12ch}
+html[lang="km"] h2{font-size:clamp(1.8rem,4.5vw,2.8rem);max-width:22ch}
+html[lang="km"] .facts b{font-size:1.9rem;line-height:1.4}
+html[lang="km"] .tiers b{line-height:1.5}
+
 /* nav */
 nav{position:absolute;top:0;left:0;right:0;z-index:5}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.4rem;padding-bottom:1.4rem}
-.logo{font-family:var(--display);font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:1.4rem;padding-bottom:1.4rem}
+.logo{font-family:var(--display);font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;margin-right:auto}
 nav ul{display:flex;gap:1.6rem;list-style:none;padding:0}
 nav ul a{color:var(--frost);text-decoration:none;font-family:var(--display);font-weight:500;font-size:.95rem}
 nav ul a:hover{color:#fff}
+.lang{font-family:var(--display);font-weight:800;font-size:.95rem;color:#fff;background:rgba(255,255,255,.12);
+  border:2px solid var(--glacier);border-radius:999px;padding:.4rem 1rem;cursor:pointer;line-height:1.4}
+.lang:hover{background:rgba(255,255,255,.25)}
 
 /* hero */
 .hero{position:relative;color:#fff;background:linear-gradient(180deg,var(--night) 0%,#1d3d5c 38%,#7b6a5a 62%,var(--saffron) 86%);
   padding:0;overflow:hidden}
-.hero .wrap{padding-top:9rem;position:relative;z-index:2}
+.hero .intro{padding-top:7.5rem;position:relative;z-index:2}
 .hero h1{font-size:clamp(3rem,9.5vw,7.6rem);font-weight:800;max-width:11ch}
-.hero .khmer{font-family:"Noto Sans Khmer",var(--display);color:var(--saffron);font-size:1.4rem;margin-bottom:1rem}
 .hero .lede{font-size:1.4rem;margin:1.5rem 0 2rem;color:var(--frost);max-width:34ch}
 .hero .cta{display:flex;gap:1rem;flex-wrap:wrap}
 .scene{display:block;width:100%;height:auto;margin-top:-3rem;position:relative;z-index:1}
@@ -58,8 +68,7 @@ nav ul a:hover{color:#fff}
 .objectives div:nth-child(2){border-color:var(--flag)}
 .objectives div:nth-child(3){border-color:var(--glacier)}
 .objectives div:nth-child(4){border-color:var(--saffron)}
-.objectives p{font-size:1.05rem;color:var(--muted)}
-.objectives p{color:#2e4558}
+.objectives p{font-size:1.05rem;color:#2e4558}
 
 /* budget */
 .dark{background:var(--night);color:#fff}
@@ -101,7 +110,7 @@ nav ul a:hover{color:#fff}
 
 /* legacy + sponsors */
 .legacy{columns:2 300px;column-gap:3rem;list-style:none;padding:0;margin-top:2rem;font-size:1.1rem}
-.legacy li{break-inside:avoid;padding:.9rem 0;border-bottom:1px solid #b7cdd6}
+.legacy li{break-inside:avoid;padding:.9rem 0;border-bottom:1px solid #35566f}
 .spons{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem}
 .spons div{border:2px solid var(--deep);padding:1.5rem;border-radius:6px}
 .spons b{font-family:var(--display);font-size:1.7rem;display:block;color:var(--saffron);margin:.2rem 0 .6rem}
@@ -109,7 +118,7 @@ nav ul a:hover{color:#fff}
 
 footer{background:var(--night);color:var(--frost);padding:3rem 0;font-size:.95rem}
 footer p{max-width:70ch;margin-bottom:.8rem}
-@media (max-width:640px){nav ul{display:none}section{padding:4rem 0}}
+@media (max-width:760px){nav ul{display:none}section{padding:4rem 0}}
 @media (prefers-reduced-motion:reduce){.sun{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -117,14 +126,20 @@ footer p{max-width:70ch;margin-bottom:.8rem}
 
 <header class="hero">
   <nav><div class="wrap">
-    <a class="logo" href="#">Angkor to Antarctica</a>
-    <ul><li><a href="#mission">Mission</a></li><li><a href="#budget">The cost</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#legacy">Legacy</a></li><li><a href="#back">Back us</a></li></ul>
+    <a class="logo" href="#" data-km="ពីអង្គរ ទៅ អង់តាក់ទិក">Angkor to Antarctica</a>
+    <ul>
+      <li><a href="#mission" data-km="បេសកកម្ម">Mission</a></li>
+      <li><a href="#budget" data-km="ថ្លៃចំណាយ">The cost</a></li>
+      <li><a href="#campaign" data-km="យុទ្ធនាការ">Campaign</a></li>
+      <li><a href="#legacy" data-km="កេរ្តិ៍ដំណែល">Legacy</a></li>
+      <li><a href="#back" data-km="គាំទ្រយើង">Back us</a></li>
+    </ul>
+    <button class="lang" id="lang" type="button" aria-label="Switch language to Khmer" lang="km">ខ្មែរ</button>
   </div></nav>
-  <div class="wrap">
-    <p class="khmer" lang="km">ពីអង្គរ ទៅ អង់តាក់ទិក</p>
-    <h1>From Angkor to Antarctica</h1>
-    <p class="lede">The first Cambodian Gen Z South Pole expedition. Taking Cambodian youth to the bottom of the world.</p>
-    <div class="cta"><a class="btn" href="#back">Back the expedition</a><a class="btn ghost" href="#mission">Read the mission</a></div>
+  <div class="wrap intro">
+    <h1 data-km="ពីអង្គរ ទៅ អង់តាក់ទិក">From Angkor to Antarctica</h1>
+    <p class="lede" data-km="ដំណើរបេសកកម្មទៅប៉ូលខាងត្បូងដំបូងបង្អស់របស់យុវជនខ្មែរជំនាន់ Gen Z។ នាំយុវជនកម្ពុជាទៅកាន់ចុងបំផុតនៃពិភពលោក។">The first Cambodian Gen Z South Pole expedition. Taking Cambodian youth to the bottom of the world.</p>
+    <div class="cta"><a class="btn" href="#back" data-km="គាំទ្របេសកកម្ម">Back the expedition</a><a class="btn ghost" href="#mission" data-km="អានអំពីបេសកកម្ម">Read the mission</a></div>
   </div>
 
   <svg class="scene" viewBox="0 0 1200 430" role="img" aria-label="Five towers of Angkor Wat silhouetted against a rising sun, above an Antarctic ice shelf">
@@ -149,88 +164,88 @@ footer p{max-width:70ch;margin-bottom:.8rem}
 <main>
 <section id="mission">
   <div class="wrap">
-    <h2>A mission, not a holiday</h2>
-    <p>We are a generation of young Cambodians who believe our ambitions should have no geographical boundaries. We want to take Cambodia to one of the most extraordinary places on Earth, and return with a message about our shared responsibility for the future of our planet.</p>
+    <h2 data-km="បេសកកម្ម មិនមែនដំណើរកម្សាន្តទេ">A mission, not a holiday</h2>
+    <p data-km="យើងជាយុវជនកម្ពុជាជំនាន់មួយ ដែលជឿថាក្តីស្រមៃរបស់យើងមិនគួរមានព្រំដែនភូមិសាស្ត្រឡើយ។ យើងចង់នាំកម្ពុជាទៅកាន់ទីកន្លែងដ៏អស្ចារ្យបំផុតមួយនៃផែនដី ហើយត្រឡប់មកវិញជាមួយសារអំពីការទទួលខុសត្រូវរួមរបស់យើងចំពោះអនាគតនៃភពផែនដី។">We are a generation of young Cambodians who believe our ambitions should have no geographical boundaries. We want to take Cambodia to one of the most extraordinary places on Earth, and return with a message about our shared responsibility for the future of our planet.</p>
     <div class="objectives">
-      <div><h3>Youth achievement</h3><p>Show that Cambodian young people can aspire to, plan and accomplish extraordinary international challenges.</p></div>
-      <div><h3>National representation</h3><p>Put Cambodia on the map in an environment where it is rarely represented.</p></div>
-      <div><h3>Environmental awareness</h3><p>Give the journey a climate-change and environmental education dimension.</p></div>
-      <div><h3>Cultural exchange</h3><p>Document the expedition and share it with Cambodian school and university students.</p></div>
+      <div><h3 data-km="សមិទ្ធផលយុវជន">Youth achievement</h3><p data-km="បង្ហាញថាយុវជនកម្ពុជាអាចស្រមៃ រៀបចំផែនការ និងសម្រេចបានបេសកកម្មអន្តរជាតិដ៏អស្ចារ្យ។">Show that Cambodian young people can aspire to, plan and accomplish extraordinary international challenges.</p></div>
+      <div><h3 data-km="តំណាងជាតិ">National representation</h3><p data-km="ដាក់កម្ពុជាលើផែនទីក្នុងទីកន្លែងដែលកម្រមានតំណាង។">Put Cambodia on the map in an environment where it is rarely represented.</p></div>
+      <div><h3 data-km="ការយល់ដឹងពីបរិស្ថាន">Environmental awareness</h3><p data-km="ផ្តល់ដំណើរនេះនូវផ្នែកអប់រំអំពីបរិស្ថាន និងការប្រែប្រួលអាកាសធាតុ។">Give the journey a climate-change and environmental education dimension.</p></div>
+      <div><h3 data-km="ការផ្លាស់ប្តូរវប្បធម៌">Cultural exchange</h3><p data-km="ថតកត់ត្រាបេសកកម្ម ហើយចែករំលែកជាមួយសិស្ស និងនិស្សិតកម្ពុជា។">Document the expedition and share it with Cambodian school and university students.</p></div>
     </div>
   </div>
 </section>
 
 <section id="budget" class="dark">
   <div class="wrap">
-    <h2>The honest cost of the Pole</h2>
-    <p>Skiing the final 111 km to the geographic South Pole is far more demanding, and far more expensive, than flying there. Published prices for the “Last Degree” are in the range below, before international flights, personal kit, insurance and preparation.</p>
+    <h2 data-km="ថ្លៃចំណាយពិតប្រាកដនៃប៉ូលខាងត្បូង">The honest cost of the Pole</h2>
+    <p data-km="ការជិះស្គីចម្ងាយ ១១១ គីឡូម៉ែត្រចុងក្រោយទៅកាន់ប៉ូលខាងត្បូងភូមិសាស្ត្រ ពិបាក និងថ្លៃជាងការហោះហើរទៅទីនោះច្រើន។ តម្លៃដែលបានផ្សព្វផ្សាយសម្រាប់ “Last Degree” មានក្នុងចន្លោះខាងក្រោម មិនទាន់រួមបញ្ចូលសំបុត្រយន្តហោះអន្តរជាតិ ឧបករណ៍ផ្ទាល់ខ្លួន ធានារ៉ាប់រង និងការត្រៀមខ្លួនទេ។">Skiing the final 111 km to the geographic South Pole is far more demanding, and far more expensive, than flying there. Published prices for the “Last Degree” are in the range below, before international flights, personal kit, insurance and preparation.</p>
     <div class="facts">
-      <div><b>111 km</b><span>The last degree of latitude, on skis</span></div>
-      <div><b>US$81–90k+</b><span>Indicative cost per person for specialist Last Degree packages</span></div>
-      <div><b>US$400k+</b><span>Potential expedition cost for a team of five</span></div>
+      <div><b data-km="១១១ គ.ម">111 km</b><span data-km="ដឺក្រេចុងក្រោយនៃរយៈទទឹង ដោយជិះស្គី">The last degree of latitude, on skis</span></div>
+      <div><b data-km="$៨១–៩០ ពាន់+">US$81–90k+</b><span data-km="តម្លៃប្រហាក់ប្រហែលក្នុងម្នាក់ សម្រាប់កញ្ចប់ Last Degree ឯកទេស">Indicative cost per person for specialist Last Degree packages</span></div>
+      <div><b data-km="$៤០០ ពាន់+">US$400k+</b><span data-km="ថ្លៃបេសកកម្មដែលអាចមានសម្រាប់ក្រុមប្រាំនាក់">Potential expedition cost for a team of five</span></div>
     </div>
-    <h3>Our first goal: US$125,000 in seed funding</h3>
-    <p>This campaign is the first stage of a larger budget. We are building a partnership model, not relying on donations alone.</p>
-    <div class="bar" role="img" aria-label="Illustrative funding mix: corporate sponsors 32 percent, Cambodian public 20 percent, international donors 20 percent, universities and foundations 16 percent, media 12 percent">
+    <h3 data-km="គោលដៅដំបូង៖ មូលនិធិចាប់ផ្តើម ១២៥,០០០ ដុល្លារអាមេរិក">Our first goal: US$125,000 in seed funding</h3>
+    <p data-km="យុទ្ធនាការនេះជាដំណាក់កាលដំបូងនៃថវិកាធំជាង។ យើងកំពុងកសាងគំរូភាពជាដៃគូ មិនពឹងលើការបរិច្ចាគតែមួយមុខទេ។">This campaign is the first stage of a larger budget. We are building a partnership model, not relying on donations alone.</p>
+    <div class="bar" role="img" aria-label="Illustrative funding mix">
       <i style="width:32%;background:#f2a900"></i><i style="width:20%;background:#d6293e"></i><i style="width:20%;background:#9cc1d1"></i><i style="width:16%;background:#eaf3f6"></i><i style="width:12%;background:#5f8aa3"></i>
     </div>
     <ul class="legend">
-      <li><em style="background:#f2a900"></em>Corporate sponsors<b>$40,000</b></li>
-      <li><em style="background:#d6293e"></em>Cambodian public campaign<b>$25,000</b></li>
-      <li><em style="background:#9cc1d1"></em>International donors<b>$25,000</b></li>
-      <li><em style="background:#eaf3f6"></em>Universities and foundations<b>$20,000</b></li>
-      <li><em style="background:#5f8aa3"></em>Media partnerships<b>$15,000</b></li>
+      <li><em style="background:#f2a900"></em><span data-km="អ្នកឧបត្ថម្ភក្រុមហ៊ុន">Corporate sponsors</span><b>$40,000</b></li>
+      <li><em style="background:#d6293e"></em><span data-km="យុទ្ធនាការសាធារណជនកម្ពុជា">Cambodian public campaign</span><b>$25,000</b></li>
+      <li><em style="background:#9cc1d1"></em><span data-km="ម្ចាស់ជំនួយអន្តរជាតិ">International donors</span><b>$25,000</b></li>
+      <li><em style="background:#eaf3f6"></em><span data-km="សាកលវិទ្យាល័យ និងមូលនិធិ">Universities and foundations</span><b>$20,000</b></li>
+      <li><em style="background:#5f8aa3"></em><span data-km="ភាពជាដៃគូប្រព័ន្ធផ្សព្វផ្សាយ">Media partnerships</span><b>$15,000</b></li>
     </ul>
-    <p class="note">Illustrative mix only. These are not secured commitments.</p>
+    <p class="note" data-km="ការបែងចែកនេះគ្រាន់តែជាឧទាហរណ៍ប៉ុណ្ណោះ មិនមែនជាការសន្យាដែលបានធានាទេ។">Illustrative mix only. These are not secured commitments.</p>
   </div>
 </section>
 
 <section id="campaign">
   <div class="wrap">
-    <h2>Ninety days to the start line</h2>
-    <p>The campaign runs as a public event, with a launch in Phnom Penh and an international push led by every participant as an ambassador.</p>
+    <h2 data-km="៩០ ថ្ងៃមុនចាប់ផ្តើមដំណើរ">Ninety days to the start line</h2>
+    <p data-km="យុទ្ធនាការនេះប្រព្រឹត្តទៅជាព្រឹត្តិការណ៍សាធារណៈ ដោយមានពិធីបើកនៅភ្នំពេញ និងយុទ្ធនាការអន្តរជាតិដែលអ្នកចូលរួមម្នាក់ៗធ្វើជាស្ថានទូត។">The campaign runs as a public event, with a launch in Phnom Penh and an international push led by every participant as an ambassador.</p>
     <ol class="days">
-      <li><small>Days 1–20</small><h3>The announcement</h3><p>A short film introduces the team, the challenge and why Cambodia belongs at the South Pole.</p></li>
-      <li><small>Days 21–40</small><h3>The public challenge</h3><p>A fundraising event in Phnom Penh for universities, businesses and media. The first corporate partners are announced.</p></li>
-      <li><small>Days 41–65</small><h3>The international campaign</h3><p>The crowdfunding page opens worldwide, aimed at the diaspora, alumni and climate and youth organisations.</p></li>
-      <li><small>Days 66–90</small><h3>The final push</h3><p>Progress reports, sponsor interviews, training footage, educational videos and a closing event.</p></li>
+      <li><small data-km="ថ្ងៃទី ១–២០">Days 1–20</small><h3 data-km="ការប្រកាស">The announcement</h3><p data-km="ខ្សែភាពយន្តខ្លីណែនាំក្រុម បញ្ហាប្រឈម និងមូលហេតុដែលកម្ពុជាគួរមានវត្តមាននៅប៉ូលខាងត្បូង។">A short film introduces the team, the challenge and why Cambodia belongs at the South Pole.</p></li>
+      <li><small data-km="ថ្ងៃទី ២១–៤០">Days 21–40</small><h3 data-km="បញ្ហាប្រឈមសាធារណៈ">The public challenge</h3><p data-km="ព្រឹត្តិការណ៍ប្រមូលថវិកានៅភ្នំពេញសម្រាប់សាកលវិទ្យាល័យ អាជីវកម្ម និងប្រព័ន្ធផ្សព្វផ្សាយ។ ដៃគូក្រុមហ៊ុនដំបូងត្រូវបានប្រកាស។">A fundraising event in Phnom Penh for universities, businesses and media. The first corporate partners are announced.</p></li>
+      <li><small data-km="ថ្ងៃទី ៤១–៦៥">Days 41–65</small><h3 data-km="យុទ្ធនាការអន្តរជាតិ">The international campaign</h3><p data-km="ទំព័រប្រមូលថវិកាបើកទូទាំងពិភពលោក សម្រាប់ជនខ្មែរនៅក្រៅប្រទេស អ្នកសាកលវិទ្យាល័យចាស់ និងអង្គការអាកាសធាតុ និងយុវជន។">The crowdfunding page opens worldwide, aimed at the diaspora, alumni and climate and youth organisations.</p></li>
+      <li><small data-km="ថ្ងៃទី ៦៦–៩០">Days 66–90</small><h3 data-km="ការប្រឹងប្រែងចុងក្រោយ">The final push</h3><p data-km="របាយការណ៍វឌ្ឍនភាព បទសម្ភាសអ្នកឧបត្ថម្ភ ការហ្វឹកហ្វឺន វីដេអូអប់រំ និងព្រឹត្តិការណ៍បិទបញ្ចប់។">Progress reports, sponsor interviews, training footage, educational videos and a closing event.</p></li>
     </ol>
   </div>
 </section>
 
 <section id="legacy" class="dark">
   <div class="wrap">
-    <h2>What Cambodia gets back</h2>
-    <p>Every supporter is investing in something that stays home. When the team returns, they will deliver:</p>
+    <h2 data-km="អ្វីដែលកម្ពុជាទទួលបានវិញ">What Cambodia gets back</h2>
+    <p data-km="អ្នកគាំទ្រគ្រប់រូបកំពុងវិនិយោគលើអ្វីដែលនៅជាប់ក្នុងប្រទេស។ ពេលក្រុមត្រឡប់មកវិញ ពួកគេនឹងផ្តល់៖">Every supporter is investing in something that stays home. When the team returns, they will deliver:</p>
     <ul class="legacy">
-      <li>Presentations at 20 Cambodian schools and universities</li>
-      <li>A short documentary about the expedition</li>
-      <li>A social media series on climate change and Antarctica</li>
-      <li>A youth leadership programme built on resilience, teamwork and international ambition</li>
-      <li>A photographic exhibition in Phnom Penh</li>
+      <li data-km="បទបង្ហាញនៅសាលារៀន និងសាកលវិទ្យាល័យកម្ពុជា ២០ កន្លែង">Presentations at 20 Cambodian schools and universities</li>
+      <li data-km="ខ្សែភាពយន្តឯកសារខ្លីអំពីបេសកកម្ម">A short documentary about the expedition</li>
+      <li data-km="ស៊េរីបណ្តាញសង្គមអំពីការប្រែប្រួលអាកាសធាតុ និងអង់តាក់ទិក">A social media series on climate change and Antarctica</li>
+      <li data-km="កម្មវិធីភាពជាអ្នកដឹកនាំយុវជន ផ្អែកលើភាពធន់ ការធ្វើការជាក្រុម និងមហិច្ឆតាអន្តរជាតិ">A youth leadership programme built on resilience, teamwork and international ambition</li>
+      <li data-km="ពិព័រណ៍រូបថតនៅភ្នំពេញ">A photographic exhibition in Phnom Penh</li>
     </ul>
     <div class="spons">
-      <div><p>Principal sponsor</p><b>US$50,000+</b><p>Lead partner across the film, exhibition and school programme.</p></div>
-      <div><p>Expedition sponsor</p><b>US$15–25k</b><p>Named partner of a core expedition or education component.</p></div>
-      <div><p>Supporting sponsor</p><b>US$2.5–10k</b><p>Recognition across campaign updates and events.</p></div>
+      <div><p data-km="អ្នកឧបត្ថម្ភចម្បង">Principal sponsor</p><b data-km="$៥០,០០០+">US$50,000+</b><p data-km="ដៃគូនាំមុខលើខ្សែភាពយន្ត ពិព័រណ៍ និងកម្មវិធីសាលារៀន។">Lead partner across the film, exhibition and school programme.</p></div>
+      <div><p data-km="អ្នកឧបត្ថម្ភបេសកកម្ម">Expedition sponsor</p><b data-km="$១៥–២៥ ពាន់">US$15–25k</b><p data-km="ដៃគូដែលមានឈ្មោះលើផ្នែកស្នូលនៃបេសកកម្ម ឬការអប់រំ។">Named partner of a core expedition or education component.</p></div>
+      <div><p data-km="អ្នកឧបត្ថម្ភគាំទ្រ">Supporting sponsor</p><b data-km="$២.៥–១០ ពាន់">US$2.5–10k</b><p data-km="ការទទួលស្គាល់តាមរយៈព័ត៌មានថ្មីៗ និងព្រឹត្តិការណ៍យុទ្ធនាការ។">Recognition across campaign updates and events.</p></div>
     </div>
   </div>
 </section>
 
 <section id="back" class="pledge">
   <div class="wrap">
-    <h2>Back the expedition</h2>
-    <p>Choose a level. Rewards are digital, because we will not carry souvenirs out of Antarctica.</p>
+    <h2 data-km="គាំទ្របេសកកម្ម">Back the expedition</h2>
+    <p data-km="ជ្រើសរើសកម្រិត។ រង្វាន់ជាឌីជីថល ព្រោះយើងនឹងមិននាំអនុស្សាវរីយ៍ចេញពីអង់តាក់ទិកទេ។">Choose a level. Rewards are digital, because we will not carry souvenirs out of Antarctica.</p>
     <div class="progress" aria-hidden="true"><i></i></div>
-    <p style="font-size:1rem"><strong>US$0</strong> raised of US$125,000 seed goal. Campaign opens soon.</p>
+    <p style="font-size:1rem" data-km="ប្រមូលបាន ០ ដុល្លារ ក្នុងចំណោមគោលដៅ ១២៥,០០០ ដុល្លារ។ យុទ្ធនាការនឹងបើកឆាប់ៗនេះ។">US$0 raised of US$125,000 seed goal. Campaign opens soon.</p>
     <form id="f" onsubmit="return false">
       <div class="tiers" role="radiogroup" aria-label="Donation level">
-        <label><input type="radio" name="t" value="10"><span><b>$10</b><small>Digital expedition supporter certificate</small></span></label>
-        <label><input type="radio" name="t" value="25"><span><b>$25</b><small>Your name on the online supporters’ wall</small></span></label>
-        <label><input type="radio" name="t" value="50" checked><span><b>$50</b><small>Expedition postcard and updates</small></span></label>
-        <label><input type="radio" name="t" value="100"><span><b>$100</b><small>A personalised thank-you video</small></span></label>
-        <label><input type="radio" name="t" value="500"><span><b>$500</b><small>Expedition supporter recognition</small></span></label>
-        <label><input type="radio" name="t" value="1000"><span><b>$1,000+</b><small>Corporate or individual patron recognition</small></span></label>
+        <label><input type="radio" name="t" value="10"><span><b>$10</b><small data-km="វិញ្ញាបនបត្រអ្នកគាំទ្របេសកកម្មឌីជីថល">Digital expedition supporter certificate</small></span></label>
+        <label><input type="radio" name="t" value="25"><span><b>$25</b><small data-km="ឈ្មោះរបស់អ្នកនៅលើជញ្ជាំងអ្នកគាំទ្រអនឡាញ">Your name on the online supporters’ wall</small></span></label>
+        <label><input type="radio" name="t" value="50" checked><span><b>$50</b><small data-km="កាតប៉ុស្តាល់បេសកកម្ម និងព័ត៌មានថ្មីៗ">Expedition postcard and updates</small></span></label>
+        <label><input type="radio" name="t" value="100"><span><b>$100</b><small data-km="វីដេអូអរគុណផ្ទាល់ខ្លួន">A personalised thank-you video</small></span></label>
+        <label><input type="radio" name="t" value="500"><span><b>$500</b><small data-km="ការទទួលស្គាល់អ្នកគាំទ្របេសកកម្ម">Expedition supporter recognition</small></span></label>
+        <label><input type="radio" name="t" value="1000"><span><b>$1,000+</b><small data-km="ការទទួលស្គាល់ជាអ្នកឧបត្ថម្ភក្រុមហ៊ុន ឬបុគ្គល">Corporate or individual patron recognition</small></span></label>
       </div>
       <button class="btn" id="go" type="submit">Give $50</button>
     </form>
@@ -241,16 +256,39 @@ footer p{max-width:70ch;margin-bottom:.8rem}
 
 <footer>
   <div class="wrap">
-    <p><strong>From Angkor to Antarctica</strong> – A Cambodian Gen Z Expedition. One generation. One extraordinary journey. One country represented at the bottom of the world.</p>
-    <p>Sample page. Figures and the funding mix are illustrative. Donations will be received and administered by an accountable partner organisation, not a personal account, through a platform that supports Cambodia.</p>
+    <p data-km="ពីអង្គរ ទៅ អង់តាក់ទិក – បេសកកម្មយុវជនខ្មែរជំនាន់ Gen Z។ មួយជំនាន់។ ដំណើរដ៏អស្ចារ្យមួយ។ ប្រទេសមួយមានតំណាងនៅចុងបំផុតនៃពិភពលោក។">From Angkor to Antarctica – A Cambodian Gen Z Expedition. One generation. One extraordinary journey. One country represented at the bottom of the world.</p>
+    <p data-km="ទំព័រគំរូ។ តួលេខ និងការបែងចែកថវិកាគ្រាន់តែជាឧទាហរណ៍។ ការបរិច្ចាគនឹងត្រូវទទួល និងគ្រប់គ្រងដោយអង្គការដៃគូដែលមានគណនេយ្យភាព មិនមែនតាមគណនីផ្ទាល់ខ្លួនទេ តាមរយៈវេទិកាដែលគាំទ្រកម្ពុជា។">Sample page. Figures and the funding mix are illustrative. Donations will be received and administered by an accountable partner organisation, not a personal account, through a platform that supports Cambodia.</p>
   </div>
 </footer>
 
 <script>
-const f=document.getElementById('f'),go=document.getElementById('go'),msg=document.getElementById('msg');
-const label=v=>'Give $'+Number(v).toLocaleString('en-US')+(v==='1000'?'+':'');
-f.addEventListener('change',e=>{go.textContent=label(e.target.value);msg.textContent=''});
-go.addEventListener('click',()=>{msg.textContent='Donations are not live yet. Connect your chosen fundraising platform link here.'});
+const T={
+  en:{give:v=>'Give $'+Number(v).toLocaleString('en-US')+(v==='1000'?'+':''),
+      msg:'Donations are not live yet. Connect your chosen fundraising platform link here.',
+      btn:'ខ្មែរ',aria:'Switch language to Khmer',title:document.title},
+  km:{give:v=>'បរិច្ចាគ $'+Number(v).toLocaleString('en-US')+(v==='1000'?'+':''),
+      msg:'ការបរិច្ចាគមិនទាន់ដំណើរការទេ។ ភ្ជាប់តំណវេទិកាប្រមូលថវិកាដែលអ្នកជ្រើសរើសនៅទីនេះ។',
+      btn:'EN',aria:'ប្តូរទៅភាសាអង់គ្លេស',title:'ពីអង្គរ ទៅ អង់តាក់ទិក – បេសកកម្មប៉ូលខាងត្បូងរបស់យុវជនខ្មែរ'}
+};
+const els=[...document.querySelectorAll('[data-km]')];
+els.forEach(e=>e.dataset.en=e.textContent);
+const f=document.getElementById('f'),go=document.getElementById('go'),msg=document.getElementById('msg'),btn=document.getElementById('lang');
+let lang='en',msgOn=false;
+const val=()=>f.querySelector('input:checked').value;
+function setLang(l){
+  lang=l;
+  document.documentElement.lang=l;
+  els.forEach(e=>e.textContent=l==='km'?e.dataset.km:e.dataset.en);
+  go.textContent=T[l].give(val());
+  msg.textContent=msgOn?T[l].msg:'';
+  btn.textContent=T[l].btn;btn.setAttribute('aria-label',T[l].aria);btn.lang=l==='km'?'en':'km';
+  document.title=T[l].title;
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+btn.addEventListener('click',()=>setLang(lang==='en'?'km':'en'));
+f.addEventListener('change',()=>{go.textContent=T[lang].give(val());msgOn=false;msg.textContent=''});
+go.addEventListener('click',()=>{msgOn=true;msg.textContent=T[lang].msg});
+try{if(localStorage.getItem('lang')==='km')setLang('km')}catch(e){}
 </script>
 </body>
 </html>
