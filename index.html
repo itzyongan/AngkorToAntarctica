@@ -122,6 +122,8 @@ nav ul a:hover{color:#fff}
 
 footer{background:var(--night);color:var(--frost);padding:3rem 0;font-size:.95rem}
 footer p{max-width:70ch;margin-bottom:.8rem}
+.nb{white-space:nowrap;word-break:keep-all}
+html[lang="km"] h1{max-width:none}
 @media (max-width:760px){nav ul{display:none}section{padding:4rem 0}}
 @media (prefers-reduced-motion:reduce){.sun{animation:none}html{scroll-behavior:auto}}
 </style>
@@ -282,7 +284,10 @@ const val=()=>f.querySelector('input:checked').value;
 function setLang(l){
   lang=l;
   document.documentElement.lang=l;
-  els.forEach(e=>e.textContent=l==='km'?e.dataset.km:e.dataset.en);
+  els.forEach(e=>{
+    if(l==='km')e.innerHTML=e.dataset.km.replace(/(\s*)អង់តាក់ទិក/g,(m,s)=>(e.tagName==='H1'?'<br>':s)+'<span class="nb">អង់តាក់ទិក</span>');
+    else e.textContent=e.dataset.en;
+  });
   go.textContent=T[l].give(val());
   msg.textContent=msgOn?T[l].msg:'';
   btn.textContent=T[l].btn;btn.setAttribute('aria-label',T[l].aria);btn.lang=l==='km'?'en':'km';
