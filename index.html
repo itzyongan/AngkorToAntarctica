@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Angkor to Antarctica – The First Cambodian Gen Z South Pole Expedition</title>
+<meta name="description" content="Taking Cambodian youth to the bottom of the world. Support the first Cambodian Gen Z South Pole expedition.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Sans+Khmer:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0b1f33; --deep:#12304b; --ice:#eaf3f6; --glacier:#9cc1d1; --frost:#cfe3ea;
+  --saffron:#f2a900; --flag:#d6293e; --ink:#0b1f33; --muted:#4d6577;
+  --display:"Bricolage Grotesque","Noto Sans Khmer",system-ui,sans-serif;
+  --body:"Newsreader","Noto Sans Khmer",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);font-size:1.15rem;line-height:1.65;color:var(--ink);background:var(--ice)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:1.2rem;max-width:18ch}
+h3{font-size:1.25rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.01em}
+p{max-width:62ch}
+section{padding:5.5rem 0}
+.btn{display:inline-block;font-family:var(--display);font-weight:800;font-size:1.05rem;text-decoration:none;
+  background:var(--saffron);color:var(--night);padding:.95rem 1.7rem;border-radius:999px;border:0;cursor:pointer}
+.btn:hover{background:#ffbe2e}
+.btn.ghost{background:transparent;color:#fff;border:2px solid var(--glacier)}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* nav */
+nav{position:absolute;top:0;left:0;right:0;z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.4rem;padding-bottom:1.4rem}
+.logo{font-family:var(--display);font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem}
+nav ul{display:flex;gap:1.6rem;list-style:none;padding:0}
+nav ul a{color:var(--frost);text-decoration:none;font-family:var(--display);font-weight:500;font-size:.95rem}
+nav ul a:hover{color:#fff}
+
+/* hero */
+.hero{position:relative;color:#fff;background:linear-gradient(180deg,var(--night) 0%,#1d3d5c 38%,#7b6a5a 62%,var(--saffron) 86%);
+  padding:0;overflow:hidden}
+.hero .wrap{padding-top:9rem;position:relative;z-index:2}
+.hero h1{font-size:clamp(3rem,9.5vw,7.6rem);font-weight:800;max-width:11ch}
+.hero .khmer{font-family:"Noto Sans Khmer",var(--display);color:var(--saffron);font-size:1.4rem;margin-bottom:1rem}
+.hero .lede{font-size:1.4rem;margin:1.5rem 0 2rem;color:var(--frost);max-width:34ch}
+.hero .cta{display:flex;gap:1rem;flex-wrap:wrap}
+.scene{display:block;width:100%;height:auto;margin-top:-3rem;position:relative;z-index:1}
+.sun{animation:rise 2.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{transform:translateY(150px);opacity:.2}to{transform:none;opacity:1}}
+
+/* mission */
+.objectives{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.4rem 2rem;margin-top:2.5rem}
+.objectives div{border-top:4px solid var(--night);padding-top:1rem}
+.objectives div:nth-child(2){border-color:var(--flag)}
+.objectives div:nth-child(3){border-color:var(--glacier)}
+.objectives div:nth-child(4){border-color:var(--saffron)}
+.objectives p{font-size:1.05rem;color:var(--muted)}
+.objectives p{color:#2e4558}
+
+/* budget */
+.dark{background:var(--night);color:#fff}
+.dark p{color:var(--frost)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin:2.5rem 0 3.5rem}
+.facts div{background:var(--deep);padding:1.6rem;border-radius:6px}
+.facts b{display:block;font-family:var(--display);font-size:2.4rem;line-height:1;margin-bottom:.5rem;color:var(--saffron)}
+.facts span{font-size:1rem;color:var(--frost)}
+.bar{display:flex;height:3.2rem;border-radius:6px;overflow:hidden;margin:1.2rem 0}
+.bar i{display:block;height:100%}
+.legend{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.7rem 2rem;font-size:1rem}
+.legend li{display:flex;gap:.7rem;align-items:baseline}
+.legend em{width:.9rem;height:.9rem;flex:none;border-radius:2px;transform:translateY(2px)}
+.legend b{font-family:var(--display);margin-left:auto;padding-left:.5rem}
+.note{font-size:.95rem;color:var(--glacier);margin-top:1rem}
+
+/* timeline */
+.days{list-style:none;padding:0;margin-top:2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
+.days li{padding:1.4rem;background:#fff;border-radius:6px;border-bottom:6px solid var(--glacier)}
+.days li:nth-child(1){border-color:var(--night)}
+.days li:nth-child(2){border-color:var(--flag)}
+.days li:nth-child(3){border-color:var(--saffron)}
+.days small{font-family:var(--display);font-weight:800;color:var(--flag);font-size:.95rem}
+.days p{font-size:1rem;color:#2e4558}
+
+/* pledge */
+.pledge{background:var(--frost)}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:2.2rem 0}
+.tiers label{display:block;cursor:pointer}
+.tiers input{position:absolute;opacity:0}
+.tiers span{display:block;height:100%;background:#fff;border:3px solid transparent;border-radius:6px;padding:1.1rem 1.2rem}
+.tiers b{display:block;font-family:var(--display);font-size:1.9rem;line-height:1.1}
+.tiers small{font-size:1rem;color:#2e4558;line-height:1.3;display:block;margin-top:.3rem}
+.tiers input:checked+span{border-color:var(--night);background:var(--night);color:#fff}
+.tiers input:checked+span small{color:var(--frost)}
+.tiers input:focus-visible+span{outline:3px solid var(--saffron);outline-offset:3px}
+.progress{background:#fff;border-radius:999px;height:1rem;overflow:hidden;margin:.8rem 0 .4rem;max-width:520px}
+.progress i{display:block;height:100%;width:2%;background:var(--flag)}
+
+/* legacy + sponsors */
+.legacy{columns:2 300px;column-gap:3rem;list-style:none;padding:0;margin-top:2rem;font-size:1.1rem}
+.legacy li{break-inside:avoid;padding:.9rem 0;border-bottom:1px solid #b7cdd6}
+.spons{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem}
+.spons div{border:2px solid var(--deep);padding:1.5rem;border-radius:6px}
+.spons b{font-family:var(--display);font-size:1.7rem;display:block;color:var(--saffron);margin:.2rem 0 .6rem}
+.spons p{font-size:1rem}
+
+footer{background:var(--night);color:var(--frost);padding:3rem 0;font-size:.95rem}
+footer p{max-width:70ch;margin-bottom:.8rem}
+@media (max-width:640px){nav ul{display:none}section{padding:4rem 0}}
+@media (prefers-reduced-motion:reduce){.sun{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <nav><div class="wrap">
+    <a class="logo" href="#">Angkor to Antarctica</a>
+    <ul><li><a href="#mission">Mission</a></li><li><a href="#budget">The cost</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#legacy">Legacy</a></li><li><a href="#back">Back us</a></li></ul>
+  </div></nav>
+  <div class="wrap">
+    <p class="khmer" lang="km">ពីអង្គរ ទៅ អង់តាក់ទិក</p>
+    <h1>From Angkor to Antarctica</h1>
+    <p class="lede">The first Cambodian Gen Z South Pole expedition. Taking Cambodian youth to the bottom of the world.</p>
+    <div class="cta"><a class="btn" href="#back">Back the expedition</a><a class="btn ghost" href="#mission">Read the mission</a></div>
+  </div>
+
+  <svg class="scene" viewBox="0 0 1200 430" role="img" aria-label="Five towers of Angkor Wat silhouetted against a rising sun, above an Antarctic ice shelf">
+    <defs>
+      <symbol id="tw" viewBox="0 0 100 200"><path d="M6 200V160H14V135H22V112H30V90C34 60 44 30 50 2C56 30 66 60 70 90V112H78V135H86V160H94V200Z"/></symbol>
+      <linearGradient id="ice" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaf3f6"/><stop offset="1" stop-color="#9cc1d1"/></linearGradient>
+    </defs>
+    <circle class="sun" cx="600" cy="300" r="150" fill="#ffd36b" opacity=".95"/>
+    <g fill="#0b1f33">
+      <use href="#tw" x="525" y="60" width="150" height="300"/>
+      <use href="#tw" x="395" y="140" width="110" height="220"/>
+      <use href="#tw" x="695" y="140" width="110" height="220"/>
+      <use href="#tw" x="285" y="200" width="80" height="160"/>
+      <use href="#tw" x="835" y="200" width="80" height="160"/>
+      <rect x="250" y="335" width="700" height="30"/>
+    </g>
+    <path fill="url(#ice)" d="M0 365 L120 350 L200 372 L330 345 L430 370 L560 348 L680 372 L790 340 L910 368 L1040 346 L1200 366 V430 H0Z"/>
+    <path fill="#eaf3f6" d="M0 400 L180 384 L360 404 L560 382 L760 406 L960 386 L1200 402 V430 H0Z"/>
+  </svg>
+</header>
+
+<main>
+<section id="mission">
+  <div class="wrap">
+    <h2>A mission, not a holiday</h2>
+    <p>We are a generation of young Cambodians who believe our ambitions should have no geographical boundaries. We want to take Cambodia to one of the most extraordinary places on Earth, and return with a message about our shared responsibility for the future of our planet.</p>
+    <div class="objectives">
+      <div><h3>Youth achievement</h3><p>Show that Cambodian young people can aspire to, plan and accomplish extraordinary international challenges.</p></div>
+      <div><h3>National representation</h3><p>Put Cambodia on the map in an environment where it is rarely represented.</p></div>
+      <div><h3>Environmental awareness</h3><p>Give the journey a climate-change and environmental education dimension.</p></div>
+      <div><h3>Cultural exchange</h3><p>Document the expedition and share it with Cambodian school and university students.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="budget" class="dark">
+  <div class="wrap">
+    <h2>The honest cost of the Pole</h2>
+    <p>Skiing the final 111 km to the geographic South Pole is far more demanding, and far more expensive, than flying there. Published prices for the “Last Degree” are in the range below, before international flights, personal kit, insurance and preparation.</p>
+    <div class="facts">
+      <div><b>111 km</b><span>The last degree of latitude, on skis</span></div>
+      <div><b>US$81–90k+</b><span>Indicative cost per person for specialist Last Degree packages</span></div>
+      <div><b>US$400k+</b><span>Potential expedition cost for a team of five</span></div>
+    </div>
+    <h3>Our first goal: US$125,000 in seed funding</h3>
+    <p>This campaign is the first stage of a larger budget. We are building a partnership model, not relying on donations alone.</p>
+    <div class="bar" role="img" aria-label="Illustrative funding mix: corporate sponsors 32 percent, Cambodian public 20 percent, international donors 20 percent, universities and foundations 16 percent, media 12 percent">
+      <i style="width:32%;background:#f2a900"></i><i style="width:20%;background:#d6293e"></i><i style="width:20%;background:#9cc1d1"></i><i style="width:16%;background:#eaf3f6"></i><i style="width:12%;background:#5f8aa3"></i>
+    </div>
+    <ul class="legend">
+      <li><em style="background:#f2a900"></em>Corporate sponsors<b>$40,000</b></li>
+      <li><em style="background:#d6293e"></em>Cambodian public campaign<b>$25,000</b></li>
+      <li><em style="background:#9cc1d1"></em>International donors<b>$25,000</b></li>
+      <li><em style="background:#eaf3f6"></em>Universities and foundations<b>$20,000</b></li>
+      <li><em style="background:#5f8aa3"></em>Media partnerships<b>$15,000</b></li>
+    </ul>
+    <p class="note">Illustrative mix only. These are not secured commitments.</p>
+  </div>
+</section>
+
+<section id="campaign">
+  <div class="wrap">
+    <h2>Ninety days to the start line</h2>
+    <p>The campaign runs as a public event, with a launch in Phnom Penh and an international push led by every participant as an ambassador.</p>
+    <ol class="days">
+      <li><small>Days 1–20</small><h3>The announcement</h3><p>A short film introduces the team, the challenge and why Cambodia belongs at the South Pole.</p></li>
+      <li><small>Days 21–40</small><h3>The public challenge</h3><p>A fundraising event in Phnom Penh for universities, businesses and media. The first corporate partners are announced.</p></li>
+      <li><small>Days 41–65</small><h3>The international campaign</h3><p>The crowdfunding page opens worldwide, aimed at the diaspora, alumni and climate and youth organisations.</p></li>
+      <li><small>Days 66–90</small><h3>The final push</h3><p>Progress reports, sponsor interviews, training footage, educational videos and a closing event.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="legacy" class="dark">
+  <div class="wrap">
+    <h2>What Cambodia gets back</h2>
+    <p>Every supporter is investing in something that stays home. When the team returns, they will deliver:</p>
+    <ul class="legacy">
+      <li>Presentations at 20 Cambodian schools and universities</li>
+      <li>A short documentary about the expedition</li>
+      <li>A social media series on climate change and Antarctica</li>
+      <li>A youth leadership programme built on resilience, teamwork and international ambition</li>
+      <li>A photographic exhibition in Phnom Penh</li>
+    </ul>
+    <div class="spons">
+      <div><p>Principal sponsor</p><b>US$50,000+</b><p>Lead partner across the film, exhibition and school programme.</p></div>
+      <div><p>Expedition sponsor</p><b>US$15–25k</b><p>Named partner of a core expedition or education component.</p></div>
+      <div><p>Supporting sponsor</p><b>US$2.5–10k</b><p>Recognition across campaign updates and events.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="back" class="pledge">
+  <div class="wrap">
+    <h2>Back the expedition</h2>
+    <p>Choose a level. Rewards are digital, because we will not carry souvenirs out of Antarctica.</p>
+    <div class="progress" aria-hidden="true"><i></i></div>
+    <p style="font-size:1rem"><strong>US$0</strong> raised of US$125,000 seed goal. Campaign opens soon.</p>
+    <form id="f" onsubmit="return false">
+      <div class="tiers" role="radiogroup" aria-label="Donation level">
+        <label><input type="radio" name="t" value="10"><span><b>$10</b><small>Digital expedition supporter certificate</small></span></label>
+        <label><input type="radio" name="t" value="25"><span><b>$25</b><small>Your name on the online supporters’ wall</small></span></label>
+        <label><input type="radio" name="t" value="50" checked><span><b>$50</b><small>Expedition postcard and updates</small></span></label>
+        <label><input type="radio" name="t" value="100"><span><b>$100</b><small>A personalised thank-you video</small></span></label>
+        <label><input type="radio" name="t" value="500"><span><b>$500</b><small>Expedition supporter recognition</small></span></label>
+        <label><input type="radio" name="t" value="1000"><span><b>$1,000+</b><small>Corporate or individual patron recognition</small></span></label>
+      </div>
+      <button class="btn" id="go" type="submit">Give $50</button>
+    </form>
+    <p id="msg" role="status" style="margin-top:1rem;font-size:1rem"></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>From Angkor to Antarctica</strong> – A Cambodian Gen Z Expedition. One generation. One extraordinary journey. One country represented at the bottom of the world.</p>
+    <p>Sample page. Figures and the funding mix are illustrative. Donations will be received and administered by an accountable partner organisation, not a personal account, through a platform that supports Cambodia.</p>
+  </div>
+</footer>
+
+<script>
+const f=document.getElementById('f'),go=document.getElementById('go'),msg=document.getElementById('msg');
+const label=v=>'Give $'+Number(v).toLocaleString('en-US')+(v==='1000'?'+':'');
+f.addEventListener('change',e=>{go.textContent=label(e.target.value);msg.textContent=''});
+go.addEventListener('click',()=>{msg.textContent='Donations are not live yet. Connect your chosen fundraising platform link here.'});
+</script>
+</body>
+</html>
