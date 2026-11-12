@@ -266,7 +266,7 @@ html[lang="km"] h1{max-width:none}
     <h2 data-km="គាំទ្របេសកកម្ម">Back the expedition</h2>
     <p data-km="ជ្រើសរើសកម្រិត។ រង្វាន់ជាឌីជីថល ព្រោះយើងនឹងមិននាំអនុស្សាវរីយ៍ចេញពីអង់តាក់ទិកទេ។">Choose a level. Rewards are digital, because we will not carry souvenirs out of Antarctica.</p>
     <div class="progress" aria-hidden="true"><i></i></div>
-    <p style="font-size:1rem" data-km="ប្រមូលបាន ០ ដុល្លារ ក្នុងចំណោមគោលដៅ ១២៥,០០០ ដុល្លារ។ យុទ្ធនាការនឹងបើកឆាប់ៗនេះ។">US$0 raised of US$125,000 seed goal. Campaign opens soon.</p>
+    <p style="font-size:1rem" data-km="គោលដៅមូលនិធិចាប់ផ្តើម ១២៥,០០០ ដុល្លារអាមេរិក។">Seed goal: US$125,000.</p>
     <form id="f" onsubmit="return false">
       <div class="tiers" role="radiogroup" aria-label="Donation level">
         <label><input type="radio" name="t" value="10"><span><b>$10</b><small data-km="វិញ្ញាបនបត្រអ្នកគាំទ្របេសកកម្មឌីជីថល">Digital expedition supporter certificate</small></span></label>
@@ -291,12 +291,13 @@ html[lang="km"] h1{max-width:none}
 </footer>
 
 <script>
+const DONATE='https://whydonate.com/fundraising/angkortoantarctica';
 const T={
   en:{give:v=>'Give $'+Number(v).toLocaleString('en-US')+(v==='1000'?'+':''),
-      msg:'Donations are not live yet. Connect your chosen fundraising platform link here.',
+      msg:'WhyDonate opened in a new tab. Enter your amount there.',
       btn:'ខ្មែរ',aria:'Switch language to Khmer',title:document.title},
   km:{give:v=>'បរិច្ចាគ $'+Number(v).toLocaleString('en-US')+(v==='1000'?'+':''),
-      msg:'ការបរិច្ចាគមិនទាន់ដំណើរការទេ។ ភ្ជាប់តំណវេទិកាប្រមូលថវិកាដែលអ្នកជ្រើសរើសនៅទីនេះ។',
+      msg:'WhyDonate បានបើកក្នុងផ្ទាំងថ្មី។ បញ្ចូលចំនួនទឹកប្រាក់របស់អ្នកនៅទីនោះ។',
       btn:'EN',aria:'ប្តូរទៅភាសាអង់គ្លេស',title:'ពីអង្គរ ទៅ អង់តាក់ទិក – បេសកកម្មប៉ូលខាងត្បូងរបស់យុវជនខ្មែរ'}
 };
 const els=[...document.querySelectorAll('[data-km]')];
@@ -319,7 +320,7 @@ function setLang(l){
 }
 btn.addEventListener('click',()=>setLang(lang==='en'?'km':'en'));
 f.addEventListener('change',()=>{go.textContent=T[lang].give(val());msgOn=false;msg.textContent=''});
-go.addEventListener('click',()=>{msgOn=true;msg.textContent=T[lang].msg});
+go.addEventListener('click',()=>{window.open(DONATE,'_blank','noopener');msgOn=true;msg.textContent=T[lang].msg});
 try{if(localStorage.getItem('lang')==='km')setLang('km')}catch(e){}
 </script>
 </body>
