@@ -74,9 +74,20 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem
 nav ul{display:flex;gap:1.6rem;list-style:none;padding:0}
 nav ul a{color:var(--frost);text-decoration:none;font-family:var(--display);font-weight:500;font-size:.95rem}
 nav ul a:hover{color:#fff}
-.lang{font-family:var(--display);font-weight:800;font-size:.95rem;color:#fff;background:rgba(255,255,255,.12);
-  border:2px solid var(--glacier);border-radius:999px;padding:.4rem 1rem;cursor:pointer;line-height:1.4}
-.lang:hover{background:rgba(255,255,255,.25)}
+.lang{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;align-items:center;padding:.22rem;
+background:#0d1424;border:1px solid rgba(255,255,255,.14);border-radius:999px;cursor:pointer;
+font-family:var(--display);font-weight:800;font-size:.85rem;line-height:1;color:#fff;
+box-shadow:0 2px 10px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.04)}
+.lang .seg{position:relative;z-index:1;min-width:2.9rem;padding:.55rem .9rem;text-align:center;border-radius:999px;
+color:rgba(255,255,255,.72);transition:color .25s}
+.lang .thumb{position:absolute;z-index:0;top:.22rem;bottom:.22rem;left:.22rem;width:calc(50% - .22rem);border-radius:999px;
+background:var(--saffron);box-shadow:0 0 14px rgba(242,169,0,.45);
+transition:transform .3s cubic-bezier(.4,.1,.2,1)}
+.lang[data-lang="en"] .thumb{transform:translateX(100%)}
+.lang[data-lang="en"] .seg-en,.lang[data-lang="km"] .seg-km{color:var(--night)}
+.lang:hover{border-color:rgba(255,255,255,.3)}
+.lang:hover .thumb{background:#ffbe2e}
+@media (prefers-reduced-motion:reduce){.lang .thumb,.lang .seg{transition:none}}
 
 /* hero */
 .hero{position:relative;color:#fff;background:linear-gradient(180deg,var(--night) 0%,#1d3d5c 38%,#7b6a5a 62%,var(--saffron) 86%);
@@ -183,7 +194,7 @@ html[lang="km"] h1{max-width:none}
       <li><a href="#legacy" data-km="កេរ្តិ៍ដំណែល">Legacy</a></li>
       <li><a href="#back" data-km="គាំទ្រយើង">Back us</a></li>
     </ul>
-    <button class="lang" id="lang" type="button" aria-label="Switch language to Khmer" lang="km">ខ្មែរ</button>
+    <button class="lang" id="lang" type="button" data-lang="en" aria-label="Switch language to Khmer"><span class="thumb" aria-hidden="true"></span><span class="seg seg-km" lang="km">ខ្មែរ</span><span class="seg seg-en" lang="en">EN</span></button>
   </div></nav>
   <div class="wrap intro">
     <h1 data-km="ពីអង្គរ ទៅ អង់តាក់ទិក">From Angkor to Antarctica</h1>
@@ -369,7 +380,7 @@ function setLang(l){
   });
   go.textContent=T[l].give(val());
   msg.textContent=msgOn?T[l].msg:'';
-  btn.textContent=T[l].btn;btn.setAttribute('aria-label',T[l].aria);btn.lang=l==='km'?'en':'km';
+  btn.dataset.lang=l;btn.setAttribute('aria-label',T[l].aria);
   document.title=T[l].title;
   try{localStorage.setItem('lang',l)}catch(e){}
 }
