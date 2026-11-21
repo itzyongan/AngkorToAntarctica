@@ -406,6 +406,19 @@ function sunKick(){if(!sunRun){sunRun=true;requestAnimationFrame(sunStep)}}
 addEventListener('scroll',sunKick,{passive:true});
 addEventListener('resize',sunKick);
 sunCur=sunTarget();sunPaint();
+const clean=()=>{if(location.hash)history.replaceState(null,'',location.pathname+location.search)};
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]');
+  if(!a)return;
+  const id=decodeURIComponent(a.getAttribute('href').slice(1));
+  const t=id?document.getElementById(id):document.body;
+  if(!t)return;
+  e.preventDefault();
+  t.scrollIntoView({behavior:'smooth'});
+  if(id){t.setAttribute('tabindex','-1');t.focus({preventScroll:true})}
+  clean();
+});
+clean();
 let swapT;
 function switchLang(l){
   btn.dataset.lang=l;
