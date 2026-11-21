@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>From Angkor to Antarctica | Cambodian Gen Z South Pole Expedition</title>
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -359,43 +356,6 @@ html[lang="km"] h1{max-width:none}
 </footer>
 
 <script>
-(function(){
-  if('scrollRestoration' in history)history.scrollRestoration='manual';
-  const n=performance.getEntriesByType('navigation')[0];
-  const hard=n&&n.type==='reload';
-  let again=null;
-  if(hard){
-    try{again=sessionStorage.getItem('hr');localStorage.clear();sessionStorage.clear()}catch(e){}
-    if(location.hash)history.replaceState(null,'',location.pathname+location.search);
-    hardRefresh(!again);
-  }
-  scrollTo(0,0);
-  async function hardRefresh(allowReload){
-    try{if(window.caches){const k=await caches.keys();await Promise.all(k.map(x=>caches.delete(x)))}}catch(e){}
-    try{if(navigator.serviceWorker){const r=await navigator.serviceWorker.getRegistrations();await Promise.all(r.map(x=>x.unregister()))}}catch(e){}
-    try{
-      const old=await (await fetch(location.href,{cache:'force-cache'})).text();
-      const cur=await (await fetch(location.href,{cache:'reload'})).text();
-      if(allowReload&&old!==cur){try{sessionStorage.setItem('hr','1')}catch(e){}location.reload();return}
-    }catch(e){}
-    const urls=new Set();
-    document.querySelectorAll('link[href],script[src],img[src],source[src]').forEach(el=>{
-      const u=el.href||el.src;if(u&&/^https?:/.test(u))urls.add(u);
-    });
-    urls.forEach(async u=>{
-      try{
-        const same=new URL(u).origin===location.origin;
-        const r=await fetch(u,{cache:'reload',mode:same?'same-origin':'cors'});
-        if(/fonts\.googleapis\.com/.test(u)){
-          const css=await r.text();
-          (css.match(/url\((https:[^)]+)\)/g)||[]).forEach(m=>{
-            fetch(m.slice(4,-1),{cache:'reload',mode:'no-cors'}).catch(()=>{});
-          });
-        }
-      }catch(e){fetch(u,{cache:'reload',mode:'no-cors'}).catch(()=>{})}
-    });
-  }
-})();
 const DONATE='https://whydonate.com/fundraising/angkortoantarctica';
 const T={
   en:{give:v=>'Give $'+Number(v).toLocaleString('en-US')+(v==='1000'?'+':''),
