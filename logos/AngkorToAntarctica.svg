@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 1320" width="1150" height="1320">
-  <rect width="1150" height="1320" fill="#fff" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85 1150 1150" width="1150" height="1150">
+  <defs><clipPath id="favicon-circle"><circle cx="575" cy="660" r="575" /></clipPath></defs>
+  <circle cx="575" cy="660" r="575" fill="#fff" />
+  <g clip-path="url(#favicon-circle)">
   <defs>
     
     <linearGradient id="gold-grad" x1="40" y1="1115" x2="955" y2="65" gradientUnits="userSpaceOnUse">
