@@ -386,8 +386,12 @@ function setLang(l){
 const sun=document.querySelector('.sun'),hero=document.querySelector('.hero');
 const DROP=210;
 let sunCur=0,sunRun=false;
+const scene=document.querySelector('.scene');
 const sunTarget=()=>{
-  const p=Math.min(1,Math.max(0,(window.scrollY||0)/(hero.offsetHeight*.9)));
+  const y=window.scrollY||0;
+  const top=scene.getBoundingClientRect().top+y;
+  const D=Math.max(220,top-innerHeight*.15);
+  const p=Math.min(1,Math.max(0,y/D));
   return 1-Math.pow(1-p,2);
 };
 function sunPaint(){
@@ -397,7 +401,7 @@ function sunPaint(){
 }
 function sunStep(){
   const t=sunTarget();
-  sunCur+=(t-sunCur)*.05;
+  sunCur+=(t-sunCur)*.07;
   if(Math.abs(t-sunCur)<.002)sunCur=t;
   sunPaint();
   if(sunCur!==t)requestAnimationFrame(sunStep);else sunRun=false;
