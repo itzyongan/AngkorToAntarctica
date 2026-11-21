@@ -136,7 +136,6 @@ angkortoantarctica/
 │
 ├── index.html
 ├── logos/
-│   ├── AngkorToAntarctica.svg
 │   ├── og-image.png
 │   ├── favicon.ico
 │   ├── favicon.png
@@ -149,7 +148,6 @@ angkortoantarctica/
 | File | Description |
 |---|---|
 | `index.html` | Main website, CSS, and JavaScript |
-| `logos/AngkorToAntarctica.svg` | Main logo and scalable favicon |
 | `logos/og-image.png` | Social sharing preview image |
 | `logos/favicon.ico` | Browser favicon |
 | `logos/favicon.png` | PNG favicon |
