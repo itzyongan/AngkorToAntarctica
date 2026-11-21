@@ -135,11 +135,12 @@ http://localhost:8000
 angkortoantarctica/
 │
 ├── index.html
-├── og-image.png
-├── favicon.ico
-├── favicon.png
-├── favicon-192.png
-├── apple-touch-icon.png
+├── logos/
+│   ├── og-image.png
+│   ├── favicon.ico
+│   ├── favicon.png
+│   ├── favicon-192.png
+│   └── apple-touch-icon.png
 ├── robots.txt
 └── sitemap.xml
 \`\`\`
@@ -147,11 +148,11 @@ angkortoantarctica/
 | File | Description |
 |---|---|
 | `index.html` | Main website, CSS, and JavaScript |
-| `og-image.png` | Social sharing preview image |
-| `favicon.ico` | Browser favicon |
-| `favicon.png` | PNG favicon |
-| `favicon-192.png` | 192 × 192 icon |
-| `apple-touch-icon.png` | Apple touch icon |
+| `logos/og-image.png` | Social sharing preview image |
+| `logos/favicon.ico` | Browser favicon |
+| `logos/favicon.png` | PNG favicon |
+| `logos/favicon-192.png` | 192 × 192 icon |
+| `logos/apple-touch-icon.png` | Apple touch icon |
 | `robots.txt` | Search engine crawling instructions |
 | `sitemap.xml` | Website sitemap |
 
